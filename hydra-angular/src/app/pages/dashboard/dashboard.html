@@ -1,0 +1,35 @@
+<h2>Project Hydra Intelligence Center</h2>
+
+<button (click)="loadBriefing()">Load Intelligence Briefing</button>
+
+<br /><br />
+
+<label>Target</label>
+<input
+  [value]="target()"
+  (input)="target.set($any($event.target).value)" />
+
+<label>Region</label>
+<input
+  [value]="region()"
+  (input)="region.set($any($event.target).value)" />
+
+<button (click)="runAnalysis()">Run Analysis</button>
+
+@if (hydra.loading()) {
+  <p>Loading intelligence data...</p>
+}
+
+@if (hydra.error()) {
+  <p style="color:red">{{ hydra.error() }}</p>
+}
+
+@if (hydra.briefing()) {
+  <h3>Briefing Result</h3>
+  <pre>{{ hydra.briefing() | json }}</pre>
+}
+
+@if (hydra.analysis()) {
+  <h3>Analysis Result</h3>
+  <pre>{{ hydra.analysis() | json }}</pre>
+}

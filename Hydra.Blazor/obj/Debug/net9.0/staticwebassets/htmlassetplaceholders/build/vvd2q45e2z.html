@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydra.Blazor</title>
+    <base href="/" />
+    
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="Hydra.Blazor.styles.css" rel="stylesheet" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.yiodnjoszm.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.4cumyhl0hv.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.xsn1d6x2kd.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.dstopyvqzi.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "./lib/bootstrap/dist/js/bootstrap.bundle.zighu96vvu.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "./lib/bootstrap/dist/js/bootstrap.esm.2mlmo7zpfv.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js",
+    "./lib/bootstrap/dist/js/bootstrap.js": "./lib/bootstrap/dist/js/bootstrap.gxq6hry2mi.js",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.js": "sha256-lh8bY3DINgTiqGL/cwOeVaJGdfE2ex1o8MzwCbmlZZE=",
+    "./_framework/blazor.webassembly.yiodnjoszm.js": "sha256-lh8bY3DINgTiqGL/cwOeVaJGdfE2ex1o8MzwCbmlZZE=",
+    "./_framework/dotnet.4cumyhl0hv.js": "sha256-FNnlNxsI/YRu1XzSvpFf5ooMdu3Lm78Tybc7kaUXt8I=",
+    "./_framework/dotnet.js": "sha256-FNnlNxsI/YRu1XzSvpFf5ooMdu3Lm78Tybc7kaUXt8I=",
+    "./_framework/dotnet.native.js": "sha256-wcPTC3mDpEcT24XjJe50tp5nZPwae2BBvtQVsRs4FN4=",
+    "./_framework/dotnet.native.xsn1d6x2kd.js": "sha256-wcPTC3mDpEcT24XjJe50tp5nZPwae2BBvtQVsRs4FN4=",
+    "./_framework/dotnet.runtime.dstopyvqzi.js": "sha256-zZ0MGlWZF0pG99PvNYvOdUvox/BZe6pddrswXlZoKyc=",
+    "./_framework/dotnet.runtime.js": "sha256-zZ0MGlWZF0pG99PvNYvOdUvox/BZe6pddrswXlZoKyc=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "sha256-FdBns99C2UO4OqtsdWrwCeWkFJo/b3/raLKeYzZteTA=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js": "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.zighu96vvu.js": "sha256-FdBns99C2UO4OqtsdWrwCeWkFJo/b3/raLKeYzZteTA=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.2mlmo7zpfv.js": "sha256-FuWvpuCikHvCwHHuybR5jTejzv9FfbY6iZgAoA8mWMc=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "sha256-FuWvpuCikHvCwHHuybR5jTejzv9FfbY6iZgAoA8mWMc=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js": "sha256-QZdFT1ZNdly4rmgUBtXmXFS9BU1FTa+sPe6h794sFRQ=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "sha256-QZdFT1ZNdly4rmgUBtXmXFS9BU1FTa+sPe6h794sFRQ=",
+    "./lib/bootstrap/dist/js/bootstrap.gxq6hry2mi.js": "sha256-LJUdyj4riwHAb/pbRHI8v3X6fLNAQHCe5AD4Iyeu5+U=",
+    "./lib/bootstrap/dist/js/bootstrap.js": "sha256-LJUdyj4riwHAb/pbRHI8v3X6fLNAQHCe5AD4Iyeu5+U=",
+    "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js": "sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ="
+  }
+}</script>
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly.yiodnjoszm.js"></script>
+</body>
+
+</html>

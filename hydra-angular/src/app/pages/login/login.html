@@ -1,0 +1,26 @@
+<h2>Project Hydra Login</h2>
+
+<label>Username</label>
+<input
+  [ngModel]="username()"
+  (ngModelChange)="username.set($event)" />
+
+<label>Password</label>
+<input
+  type="password"
+  [ngModel]="password()"
+  (ngModelChange)="password.set($event)" />
+
+<button (click)="login()">Login</button>
+
+@if (hydra.loading()) {
+  <p>Authenticating...</p>
+}
+
+@if (hydra.error()) {
+  <p style="color:red">{{ hydra.error() }}</p>
+}
+
+@if (hydra.token()) {
+  <p style="color:green">Login successful. JWT token received.</p>
+}

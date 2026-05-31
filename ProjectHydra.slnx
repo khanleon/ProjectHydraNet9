@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Hydra.Blazor/Hydra.Blazor.csproj" />
+  <Project Path="Hydra.GatewayApi.Tests/Hydra.GatewayApi.Tests.csproj" />
+  <Project Path="Hydra.GatewayApi/Hydra.GatewayApi.csproj" />
+  <Project Path="Hydra.OperationsIntelligenceApi/Hydra.OperationsIntelligenceApi.csproj" />
+  <Project Path="Hydra.ThreatIntelligenceApi/Hydra.ThreatIntelligenceApi.csproj" />
+</Solution>

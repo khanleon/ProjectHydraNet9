@@ -1,0 +1,100 @@
+@page "/intelligence"
+@inject HttpClient Http
+
+<h2>Project Hydra Intelligence Center</h2>
+
+<button @onclick="Login">Login</button>
+<button @onclick="LoadBriefing" disabled="@string.IsNullOrWhiteSpace(token)">Load Briefing</button>
+<button @onclick="RunAnalysis" disabled="@string.IsNullOrWhiteSpace(token)">Run Analysis</button>
+
+@if (!string.IsNullOrWhiteSpace(message))
+{
+    <p>@message</p>
+}
+
+@if (!string.IsNullOrWhiteSpace(result))
+{
+    <h3>Result</h3>
+    <pre>@result</pre>
+}
+
+@code {
+    private string? token;
+    private string? result;
+    private string? message;
+
+    private async Task Login()
+    {
+        var response = await Http.PostAsJsonAsync("/api/auth/login", new
+        {
+            username = "admin",
+            password = "password"
+        });
+
+        if (!response.IsSuccessStatusCode)
+        {
+            message = "Login failed.";
+            return;
+        }
+
+        var loginResult = await response.Content.ReadFromJsonAsync<LoginResponse>();
+
+        token = loginResult?.Token;
+        message = "Login successful. JWT token received.";
+    }
+
+    private async Task LoadBriefing()
+    {
+        if (string.IsNullOrWhiteSpace(token))
+        {
+            message = "Login first.";
+            return;
+        }
+
+        var request = new HttpRequestMessage(
+            HttpMethod.Get,
+            "/api/intelligence/briefing");
+
+        request.Headers.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue(
+                "Bearer",
+                token);
+
+        var response = await Http.SendAsync(request);
+
+        result = await response.Content.ReadAsStringAsync();
+    }
+
+    private async Task RunAnalysis()
+    {
+        if (string.IsNullOrWhiteSpace(token))
+        {
+            message = "Login first.";
+            return;
+        }
+
+        var request = new HttpRequestMessage(
+            HttpMethod.Post,
+            "/api/intelligence/analyze");
+
+        request.Headers.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue(
+                "Bearer",
+                token);
+
+        request.Content = JsonContent.Create(new
+        {
+            target = "Hydra Network",
+            region = "Phoenix Sector"
+        });
+
+        var response = await Http.SendAsync(request);
+
+        result = await response.Content.ReadAsStringAsync();
+    }
+
+    private class LoginResponse
+    {
+        public string? Token { get; set; }
+    }
+}

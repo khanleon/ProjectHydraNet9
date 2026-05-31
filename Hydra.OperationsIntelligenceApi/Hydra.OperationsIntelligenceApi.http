@@ -1,0 +1,6 @@
+@Hydra.OperationsIntelligenceApi_HostAddress = http://localhost:5011
+
+GET {{Hydra.OperationsIntelligenceApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

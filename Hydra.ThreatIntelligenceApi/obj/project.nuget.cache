@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xnOeSaj3GEo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\khanl\\ProjectHydraNet9\\Hydra.ThreatIntelligenceApi\\Hydra.ThreatIntelligenceApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\khanl\\.nuget\\packages\\swashbuckle.aspnetcore\\9.0.0\\swashbuckle.aspnetcore.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
